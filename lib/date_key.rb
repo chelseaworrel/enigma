@@ -1,4 +1,4 @@
-class Date
+class DateKey
   attr_reader :date
 
   def initialize(date = Time.now.strftime("%m%d%y"))
@@ -9,8 +9,10 @@ class Date
     @date.to_i ** 2
   end
 
-  def last_four_digits
-
+  def date_offsets
+    square_the_date.to_s.chars.last(4).map(&:to_i)
+    #needs to return an array of 4 numbers so it
+    #can combine with key offsets
   end
 
 end

@@ -2,32 +2,33 @@ require './lib/key_generator'
 
 class Key
   attr_reader :key
-  
+
   def initialize(key = KeyGenerator.generate)
     @key = key
   end
 
-  def offsets
+  def key_offsets
     @key.chars.each_cons(2).map(&:join).map(&:to_i)
+    #returns an array of 4 numbers
   end
 
 #don't know if I will need the following, delete if not needed:
 
-  def key_rotation_a
-    @key[0..1].to_i
-  end
-
-  def key_rotation_b
-    @key[1..2].to_i
-  end
-
-  def key_rotation_c
-    @key[2..3].to_i
-  end
-
-  def key_rotation_d
-    @key
-  end
+  # def key_rotation_a
+  #   @key[0..1].to_i
+  # end
+  #
+  # def key_rotation_b
+  #   @key[1..2].to_i
+  # end
+  #
+  # def key_rotation_c
+  #   @key[2..3].to_i
+  # end
+  #
+  # def key_rotation_d
+  #   @key
+  # end
 
 end
 
