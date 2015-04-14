@@ -1,9 +1,16 @@
 require './lib/key_generator'
 
 class Key
+  attr_reader :key
   def initialize(key = KeyGenerator.generate)
     @key = key
   end
+
+  def offsets
+    @key.chars.each_cons(2).map(&:join).map(&:to_i)
+  end
+
+#don't know if I will need the following, delete if not needed:
 
   def key_rotation_a
     @key[0..1].to_i
@@ -18,17 +25,12 @@ class Key
   end
 
   def key_rotation_d
-    @key[3..4].to_i
+    @key
   end
+
 end
 
 
-
-
-#   def rotations(takes in a key)
-# => returns an array [with the rotations included]
-#   end
-# end
 
 #need something like:
 #Key.generate -> new Key with random value`; `Key.new(41521).rotations -> [41,15,52,21]

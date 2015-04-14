@@ -11,6 +11,11 @@ class KeyTest < Minitest::Test
     assert_equal 2, key.key_rotation_a.to_s.length
   end
 
+  def test_it_can_join_the_offsets
+    key = Key.new("12345")
+    assert_equal [12, 23, 34, 45], key.offsets
+  end
+
   def test_it_can_identify_rotation_a
     key = Key.new("12345")
     assert_equal 12, key.key_rotation_a
