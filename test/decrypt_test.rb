@@ -5,4 +5,5 @@ class DecryptTest < Minitest::Test
   def test_it_exists
     assert Decrypt.new
   end
+  
 end

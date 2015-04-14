@@ -7,6 +7,7 @@ class KeyGenerator
       KEY_SELECTION.sample
     end.join
   end
+  
 end
 
 #USE CONSTANT(EX: KEY_SELECTION) FOR YOUR CHAR MAP AS WELL

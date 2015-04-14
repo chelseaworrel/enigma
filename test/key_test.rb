@@ -35,4 +35,5 @@ class KeyTest < Minitest::Test
     key = Key.new("12345")
     assert_equal 45, key.key_rotation_d
   end
+  
 end

@@ -15,6 +15,7 @@ class DateTest < Minitest::Test
     date = Date.new
     assert_equal 1715202225, date.square_the_date
   end
+  
 end
 
 #must change your date values the day your project is due
