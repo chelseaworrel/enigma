@@ -7,7 +7,7 @@ class DateKeyTest < Minitest::Test
   end
 
   def test_it_can_store_the_date
-    date = DateKey.new
+    date = DateKey.new("041415")
     assert_equal "041415", date.date
   end
 
@@ -15,13 +15,10 @@ class DateKeyTest < Minitest::Test
     date = DateKey.new
     assert_equal 1715202225, date.square_the_date
   end
-  
+
   def test_it_takes_last_four_digits_for_offsets
     date = DateKey.new
     assert_equal [2,2,2,5], date.date_offsets
   end
 
 end
-
-#must change your date values the day your project is due
-#to refelect current date and current date squared values
