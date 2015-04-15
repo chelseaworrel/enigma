@@ -26,6 +26,12 @@ class EncryptorTest < Minitest::Test
   def test_ultimate_whammy_of_all_whammies
     assert_equal "48ax", Encryptor.new("41521", "020315", "try ").return_encrypting_chars
     assert_equal "48p1", Encryptor.new("41521", "020315", "trab").return_encrypting_chars
+    # assert_equal "48p1", Encryptor.new("41521", "020315", "trab").return_encrypting_chars
+    assert_equal "2.ql", Encryptor.new("41521", "020315", "ruby").return_encrypting_chars
+  end
+
+  def test_it_can_encrypt_more_than_one_word
+    assert_equal "48ax2.ql", Encryptor.new("41521", "020315", "try ruby").return_encrypting_chars
   end
 
 end
