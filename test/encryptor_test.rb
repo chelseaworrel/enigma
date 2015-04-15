@@ -8,7 +8,8 @@ class EncryptorTest < Minitest::Test
 
   def test_it_can_group_letters
     assert_equal [["t"]], Encryptor.new("11111", "041415", "t").split_letters
-    assert_equal [["t", "r", "y", " "], ["r", "u", "b", "y"]], Encryptor.new("11111", "041415", "try ruby").split_letters
+    encrypt = Encryptor.new("11111", "041415", "try ruby")
+    assert_equal [["t", "r", "y", " "], ["r", "u", "b", "y"]], encrypt.split_letters
   end
 
   def test_it_can_find_the_grouped_letters_index_on_the_character_map
@@ -24,7 +25,7 @@ class EncryptorTest < Minitest::Test
   end
 
   def test_that_if_your_rotation_indexes_plus_the_indexes_on_the_char_map_is_greater_than_the_map_can_still_work
-    assert_equal [[30]], Encryptor.new("41521", "020315", "t").stay_on_char_map
+    assert_equal [[30]], Encryptor.new("41521", "020315", "t").keep_within_char_map
   end
 
   def test_it_can_encrypt_one_character
@@ -59,7 +60,7 @@ class EncryptorTest < Minitest::Test
   end
 
   def test_ultimate_whammy
-    assert_equal "6uv8kv5nn0ku0p4b26v3tkzqpuv3r", Encryptor.new("11111", "041415", "this is an encrypting machine").return_encrypting_chars
+    encrypt = Encryptor.new("11111", "041415", "this is an encrypting machine")
+    assert_equal "6uv8kv5nn0ku0p4b26v3tkzqpuv3r", encrypt.return_encrypting_chars
   end
-
 end

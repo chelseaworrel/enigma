@@ -14,14 +14,4 @@ class Rotation
         offset.reduce(:+)
       end
   end
-
 end
-  #need to take date_offsets
-  #and the key_offsets and sum them
-  #to create the rotation that will be
-  #used in the rotator class
-#needs a key
-#needs a date_key
-#needs to get their offsets and
-#combine them somehow
-#needs to product its own offsets

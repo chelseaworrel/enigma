@@ -10,5 +10,4 @@ class KeyGeneratorTest < Minitest::Test
     key = KeyGenerator.generate
     assert_equal 5, KeyGenerator.generate.length
   end
-
 end

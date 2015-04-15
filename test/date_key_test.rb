@@ -20,5 +20,4 @@ class DateKeyTest < Minitest::Test
     date = DateKey.new("041415")
     assert_equal [2,2,2,5], date.date_offsets
   end
-
 end

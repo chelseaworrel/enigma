@@ -1,18 +1,18 @@
 require './lib/rotation'
 
-class Encryptor
-  attr_reader :rotation, :message #do I need this?
+class Decryptor
+  attr_reader :rotation, :encrypted_message
 
 
   CHAR_MAP = [*("a".."z"), *("0".."9"), " ", ".", ","]
 
-  def initialize(key, date_key, message)
+  def initialize(key, date_key, encrypted_message)
     @rotation = Rotation.new(key, date_key).rotators
-    @message  = message
+    @encrypted_message  = encrypted_message
   end
 
   def split_letters
-     @message.chars.each_slice(4).to_a
+     @encrypted_message.chars.each_slice(4).to_a
   end
 
   def index_on_map
@@ -23,14 +23,14 @@ class Encryptor
     end
   end
 
-  def message_rotation_combo
+  def encrypted_message_rotation_combo
     index_on_map.map do |group|
-      group.zip(@rotation).map { |nums| nums.reduce(:+) }
+      group.zip(@rotation).map { |nums| nums.reduce(:-) }
     end
   end
 
   def keep_within_char_map
-    message_rotation_combo.map do |group|
+    encrypted_message_rotation_combo.map do |group|
       group.map do |index|
         index % 39
       end
