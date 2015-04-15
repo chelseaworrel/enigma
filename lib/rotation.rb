@@ -2,19 +2,20 @@ require './lib/date_key'
 require './lib/key'
 
 class Rotation
-  attr_reader :key, :date_key
 
   def initialize(key, date_key)
-    @key = key
-    @date_key = date_key
+    @key      = Key.new(key)
+    @date_key = DateKey.new(date_key)
   end
 
-  def offsets
+  def rotators
     offsets = @date_key.date_offsets.zip(@key.key_offsets)
       offsets.map do |offset|
         offset.reduce(:+)
       end
   end
+
+end
   #need to take date_offsets
   #and the key_offsets and sum them
   #to create the rotation that will be
@@ -24,4 +25,3 @@ class Rotation
 #needs to get their offsets and
 #combine them somehow
 #needs to product its own offsets
-end

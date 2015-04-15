@@ -1,7 +1,7 @@
 class DateKey
   attr_reader :date
 
-  def initialize(date = today)
+  def initialize(date) #default date with today method
      @date = date
    end
 

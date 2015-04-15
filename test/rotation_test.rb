@@ -5,14 +5,14 @@ require './lib/date_key'
 
 class RotationTest < Minitest::Test
   def test_it_exists
-    assert Rotation.new("41521", "020315")
+    assert Rotation.new("11111", "041415")
   end
 
-  def test_it
-    key = Key.new("41521")
-    date_key = DateKey.new("020315")
-    rotation = Rotation.new(key, date_key).offsets
-    assert_equal [50,17,54,26], rotation
+  def test_it_can_create_a_rotation_value
+    key = Key.new("11111")
+    date_key = DateKey.new("041415")
+    rotation = Rotation.new("11111", "041415").rotators
+    assert_equal [13,13,13,16], rotation
   end
 
 end
