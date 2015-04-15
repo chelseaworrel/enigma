@@ -10,14 +10,12 @@ class Encryptor
     @message  = message
   end
 
-  def split_letters #message chunked into groups of 4 characters
-    # @message.chars
+  def split_letters
      @message.chars.each_slice(4).to_a
   end
 
   def index_on_map
-    # require 'pry' ; binding.pry
-    # [['t','r','y',' '], ['r', 'u', 'b', 'y']]
+
     split_letters.map do |group|
       group.map do |letter|
         CHAR_MAP.find_index(letter)
@@ -31,8 +29,7 @@ class Encryptor
     end
   end
 
-
-  def flappy
+  def stay_on_char_map
     message_rotation_combo.map do |group|
       group.map do |index|
         index % 39
@@ -41,7 +38,7 @@ class Encryptor
   end
 
   def return_encrypting_chars
-    flappy.map do |group|
+    stay_on_char_map.map do |group|
       group.map do |index|
          CHAR_MAP[index]
        end
