@@ -1,11 +1,10 @@
-require './lib/rotation'
 require './lib/decryptor'
 
 class Cracked
   attr_reader   :date_key, :encrypted_message
   attr_accessor :key
 
-  def initialize(date, encrypted_message = "..end..")
+  def initialize(date, encrypted_message)
     @date              = date
     @encrypted_message = encrypted_message
     @key               = "00000"
