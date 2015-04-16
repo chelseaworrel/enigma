@@ -57,4 +57,9 @@ class DecryptorTest < Minitest::Test
     encrypt = Decryptor.new("11111", "041415","6uv8kv5nn0ku0p4b26v3tkzqpuv3r")
     assert_equal "this is an encrypting machine", encrypt.return_encrypting_chars
   end
+
+  def test_ultimate_whammy_again
+    encrypt = Decryptor.new("82648", "030415","4dili2bl2g97kz1ly635kiy0khgom6zmkc4me")
+    assert_equal "you can write a secret message..end..", encrypt.return_encrypting_chars
+  end
 end

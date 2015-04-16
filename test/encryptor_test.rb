@@ -49,7 +49,7 @@ class EncryptorTest < Minitest::Test
     assert_equal "48ax", Encryptor.new("41521", "020315", "try ").return_encrypting_chars
     assert_equal "48p1", Encryptor.new("41521", "020315", "trab").return_encrypting_chars
     assert_equal "48p1", Encryptor.new("41521", "020315", "trab").return_encrypting_chars
-    assert_equal "2.ql", Encryptor.new("41521", "020315", "ruby").return_encrypting_chars
+    assert_equal "xj2,", Encryptor.new("82648", "030415", "ruby").return_encrypting_chars
   end
 
   def test_it_can_encrypt_more_than_one_word
@@ -62,5 +62,10 @@ class EncryptorTest < Minitest::Test
   def test_ultimate_whammy
     encrypt = Encryptor.new("11111", "041415", "this is an encrypting machine..end..")
     assert_equal "6uv8kv5nn0ku0p4b26v3tkzqpuv3rllu0qlo", encrypt.return_encrypting_chars
+  end
+
+  def test_ultimate_whammy_again
+    encrypt = Encryptor.new("82648", "030415", "you can write a secret message..end..")
+    assert_equal "4dili2bl2g97kz1ly635kiy0khgom6zmkc4me", encrypt.return_encrypting_chars
   end
 end

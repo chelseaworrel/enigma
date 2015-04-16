@@ -1,6 +1,6 @@
 require './lib/decryptor'
 
-class Cracked
+class Crackor
   attr_reader   :date_key, :encrypted_message, :modified_message
   attr_accessor :key
 
