@@ -18,13 +18,13 @@ class DecryptorTest < Minitest::Test
     assert_equal [[30, 34, 0]], Decryptor.new("11111", "041415", "48a").index_on_map
   end
 
-  def test_it_can_return_an_array_that_subtracts_the_index_on_the_char_map_and_your_rotation_indexes
+  def test_it_can_return_an_array_that_subtracts_the_index_on_the_char_map_and_your_rotation_indices
     assert_equal [[-50]], Decryptor.new("41521", "020315", "a").encrypted_message_rotation_combo
     assert_equal [[-13, -12]], Decryptor.new("11111", "041415", "ab").encrypted_message_rotation_combo
     assert_equal [[17, 21, -13]], Decryptor.new("11111", "041415", "48a").encrypted_message_rotation_combo
   end
 
-  def test_that_if_your_rotation_indexes_plus_the_indexes_on_the_char_map_is_greater_than_the_map_can_still_work
+  def test_that_if_your_rotation_indices_plus_the_indices_on_the_char_map_is_greater_than_the_map_can_still_work
     assert_equal [[8]], Decryptor.new("41521", "020315", "t").keep_within_char_map
   end
 
