@@ -7,7 +7,7 @@ class Decryptor
   CHAR_MAP = [*("a".."z"), *("0".."9"), " ", ".", ","]
 
   def initialize(key, date_key, encrypted_message)
-    @rotation = Rotation.new(key, date_key).rotators
+    @rotation           = Rotation.new(key, date_key).rotators
     @encrypted_message  = encrypted_message
   end
 

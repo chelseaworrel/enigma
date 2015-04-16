@@ -15,4 +15,9 @@ class CrackedTest < Minitest::Test
     crack = Cracked.new("020315", "48ax2.qljptaopn")
     assert_equal "41521", crack.crack_file
   end
+
+  def test_and_keep_on_testing_that_it_cracks
+    crack = Cracked.new("041415", "6uv8k5uy6kv8kp14yllu0qlo")
+    assert_equal "11111", crack.crack_file
+  end
 end

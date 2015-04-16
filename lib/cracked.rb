@@ -13,11 +13,9 @@ class Cracked
 
   def crack_file
     until confirmed_decrypted?
-      puts "try #{@key} #{@date} #{@encrypted_message}"
       decryptor = Decryptor.new(@key, @date, @encrypted_message)
       @modified_message = decryptor.return_encrypting_chars
       @key = (@key.to_i + 1).to_s.rjust(5, "0")
-      puts "trying key #{@key}"
     end
     (@key.to_i - 1).to_s
   end
