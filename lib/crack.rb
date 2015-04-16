@@ -11,5 +11,5 @@ key     = cracker.crack_file
 cracked_message = cracker.modified_message
 
 File.open(outfile, "w") { |file| file.write(cracked_message) }
-
+# File.write(outfile).write(cracked_message)
 puts "Created 'cracked.txt' with the key #{key} and date #{date}"

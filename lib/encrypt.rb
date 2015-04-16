@@ -11,5 +11,5 @@ encrypt           = Encryptor.new(key, date_key, message)
 encrypted_message = encrypt.return_encrypting_chars
 
 File.open(outfile, "w") { |file| file.write(encrypted_message) }
-
+# File.write(outfile).write(encrypted_message)
 puts "Created 'encrypted.txt' with the key #{key} and date #{date_key}"

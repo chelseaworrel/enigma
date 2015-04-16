@@ -12,7 +12,7 @@ class Encryptor
   end
 
   def split_letters
-     @message.chars.each_slice(4).to_a
+    @message.chars.each_slice(4).to_a
   end
 
   def index_on_map
@@ -40,7 +40,7 @@ class Encryptor
   def return_encrypting_chars
     keep_within_char_map.map do |group|
       group.map do |index|
-         CHAR_MAP[index]
+        CHAR_MAP[index]
        end
      end.join
   end

@@ -10,8 +10,8 @@ class Rotation
 
   def rotators
     offsets = @date_key.date_offsets.zip(@key.key_offsets)
-      offsets.map do |offset|
-        offset.reduce(:+)
-      end
+    offsets.map do |offset|
+      offset.reduce(:+)
+    end
   end
 end

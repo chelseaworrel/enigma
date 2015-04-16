@@ -12,7 +12,7 @@ class Decryptor
   end
 
   def split_letters
-     @encrypted_message.chars.each_slice(4).to_a
+    @encrypted_message.chars.each_slice(4).to_a
   end
 
   def index_on_map
